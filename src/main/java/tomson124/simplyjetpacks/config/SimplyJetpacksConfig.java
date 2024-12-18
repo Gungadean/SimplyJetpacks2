@@ -203,12 +203,16 @@ public class SimplyJetpacksConfig {
     @SubscribeEvent
     public static void onLoad(final ModConfigEvent.Loading configEvent) {
         SimplyJetpacks.LOGGER.info("Config Loaded: {}", configEvent.getConfig().getFileName());
-        JetpackType.loadAllConfigs();
+
+        // Prevent loading of jetpack configs before common config has been loaded by system.
+        if (configEvent.getConfig().getFileName().equals("simplyjetpacks-common.toml"))
+            JetpackType.loadAllConfigs();
     }
 
     @SubscribeEvent
     public static void onFileChange(final ModConfigEvent.Reloading configEvent) {
         SimplyJetpacks.LOGGER.info("Config Re-Loaded: {}", configEvent.getConfig().getFileName());
+
         JetpackType.loadAllConfigs();
     }
 

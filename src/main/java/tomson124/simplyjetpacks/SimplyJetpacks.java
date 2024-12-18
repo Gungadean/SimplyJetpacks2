@@ -25,7 +25,6 @@ import tomson124.simplyjetpacks.handlers.RegistryHandler;
 import tomson124.simplyjetpacks.hud.HUDHandler;
 import tomson124.simplyjetpacks.integration.CuriosIntegration;
 import tomson124.simplyjetpacks.item.JetpackItem;
-import tomson124.simplyjetpacks.item.JetpackType;
 import tomson124.simplyjetpacks.item.PilotGogglesItem;
 import tomson124.simplyjetpacks.item.SJItemGroup;
 import tomson124.simplyjetpacks.network.NetworkHandler;
@@ -58,8 +57,6 @@ public class SimplyJetpacks {
 //        MinecraftForge.EVENT_BUS.register(new SJSounds());
 
         SimplyJetpacksConfig.register();
-        // TODO: fix this (1/3)
-        JetpackType.loadAllConfigs();
         RegistryHandler.init();
     }
 
