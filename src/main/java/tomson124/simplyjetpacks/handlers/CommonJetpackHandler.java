@@ -49,15 +49,14 @@ public class CommonJetpackHandler {
         return HOLDING_RIGHT.containsKey(player) && HOLDING_RIGHT.get(player);
     }
 
-    public static void update(Player player, boolean up, boolean invert, boolean down, boolean forwards, boolean backwards, boolean left, boolean right) {
-        HOLDING_UP.put(player, up);
-
+    public static void update(Player player, boolean invert, boolean up, boolean down, boolean forwards, boolean backwards, boolean left, boolean right) {
         if(invert) {
             INVERTED.add(player);
         } else {
             INVERTED.remove(player);
         }
 
+        HOLDING_UP.put(player, up);
         HOLDING_DOWN.put(player, down);
         HOLDING_FORWARDS.put(player, forwards);
         HOLDING_BACKWARDS.put(player, backwards);

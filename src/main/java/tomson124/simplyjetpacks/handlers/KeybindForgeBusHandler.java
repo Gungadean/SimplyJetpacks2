@@ -91,8 +91,8 @@ public class KeybindForgeBusHandler {
                 lastBackwardState = backwardState;
                 lastLeftState = leftState;
                 lastRightState = rightState;
-                NetworkHandler.sendToServer(new PacketUpdateInput(flyState, invertHover, descendState, forwardState, backwardState, leftState, rightState));
-                CommonJetpackHandler.update(mc.player, flyState, invertHover, descendState, forwardState, backwardState, leftState, rightState);
+                NetworkHandler.sendToServer(new PacketUpdateInput(invertHover, flyState, descendState, forwardState, backwardState, leftState, rightState));
+                CommonJetpackHandler.update(mc.player, invertHover, flyState, descendState, forwardState, backwardState, leftState, rightState);
             }
         }
     }

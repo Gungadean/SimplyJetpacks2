@@ -5,6 +5,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.event.server.ServerStoppingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -86,6 +87,13 @@ public class SimplyJetpacks {
     public void onServerStopping(ServerStoppingEvent event) {
         LOGGER.info("Server stopping...");
         CommonJetpackHandler.clear();
+    }
+
+    @SubscribeEvent
+    public void onPlayerLogin(final PlayerEvent.PlayerLoggedInEvent loggedInEvent) {
+        SimplyJetpacks.LOGGER.info("{} logging in. Syncing server jetpack configs with client.", loggedInEvent.getEntity().getName().getString());
+        SimplyJetpacksConfig.sendServerConfigFiles(loggedInEvent.getEntity());
+        SimplyJetpacks.LOGGER.info("Finished syncing server jetpack configs.");
     }
 
     private void attachCapabilities(AttachCapabilitiesEvent<ItemStack> event) {

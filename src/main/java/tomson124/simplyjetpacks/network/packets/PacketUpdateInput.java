@@ -9,17 +9,17 @@ import java.util.function.Supplier;
 
 public class PacketUpdateInput {
 
-    private final boolean up;
     private final boolean invert;
+    private final boolean up;
     private final boolean down;
     private final boolean forwards;
     private final boolean backwards;
     private final boolean left;
     private final boolean right;
 
-    public PacketUpdateInput(boolean up, boolean invert, boolean down, boolean forwards, boolean backwards, boolean left, boolean right) {
-        this.up = up;
+    public PacketUpdateInput(boolean invert, boolean up, boolean down, boolean forwards, boolean backwards, boolean left, boolean right) {
         this.invert = invert;
+        this.up = up;
         this.down = down;
         this.forwards = forwards;
         this.backwards = backwards;
@@ -32,8 +32,8 @@ public class PacketUpdateInput {
     }
 
     public static void toBytes(PacketUpdateInput message, FriendlyByteBuf  buffer) {
-        buffer.writeBoolean(message.up);
         buffer.writeBoolean(message.invert);
+        buffer.writeBoolean(message.up);
         buffer.writeBoolean(message.down);
         buffer.writeBoolean(message.forwards);
         buffer.writeBoolean(message.backwards);
@@ -45,7 +45,7 @@ public class PacketUpdateInput {
         ctx.get().enqueueWork(() -> {
             Player player = ctx.get().getSender();
             if (player != null) {
-                CommonJetpackHandler.update(player, message.up, message.invert, message.down, message.forwards, message.backwards, message.left, message.right);
+                CommonJetpackHandler.update(player, message.invert, message.up, message.down, message.forwards, message.backwards, message.left, message.right);
             }
         });
         ctx.get().setPacketHandled(true);

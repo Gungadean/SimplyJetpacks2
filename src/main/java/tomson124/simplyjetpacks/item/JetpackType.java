@@ -51,7 +51,7 @@ public enum JetpackType {
     TE5_ARMORED("te5_enderium", 5, "te5", true),
     ;
 
-    private static final EnumSet<JetpackType> JETPACK_ALL = EnumSet.allOf(JetpackType.class);
+    public static final EnumSet<JetpackType> JETPACK_ALL = EnumSet.allOf(JetpackType.class);
 
     private final String name;
     private final String configKey;
@@ -147,68 +147,136 @@ public enum JetpackType {
         return energyCapacity;
     }
 
+    public void setEnergyCapacity(int energyCapacity) {
+        this.energyCapacity = energyCapacity;
+    }
+
     public int getEnergyUsage() {
         return energyUsage;
+    }
+
+    public void setEnergyUsage(int energyUsage) {
+        this.energyUsage = energyUsage;
     }
 
     public int getEnergyPerTickIn() {
         return energyPerTickIn;
     }
 
+    public void setEnergyPerTickIn(int energyPerTickIn) {
+        this.energyPerTickIn = energyPerTickIn;
+    }
+
     public int getEnergyPerTickOut() {
         return energyPerTickOut;
+    }
+
+    public void setEnergyPerTickOut(int energyPerTickOut) {
+        this.energyPerTickOut = energyPerTickOut;
     }
 
     public int getArmorReduction() {
         return armorReduction;
     }
 
+    public void setArmorReduction(int armorReduction) {
+        this.armorReduction = armorReduction;
+    }
+
     public int getArmorEnergyPerHit() {
         return armorEnergyPerHit;
+    }
+
+    public void setArmorEnergyPerHit(int armorEnergyPerHit) {
+        this.armorEnergyPerHit = armorEnergyPerHit;
     }
 
     public int getEnchantability() {
         return enchantability;
     }
 
+    public void setEnchantability(int enchantability) {
+        this.enchantability = enchantability;
+    }
+
     public double getSpeedVertical() {
         return speedVertical;
+    }
+
+    public void setSpeedVertical(double speedVertical) {
+        this.speedVertical = speedVertical;
     }
 
     public double getAccelVertical() {
         return accelVertical;
     }
 
+    public void setAccelVertical(double accelVertical) {
+        this.accelVertical = accelVertical;
+    }
+
     public double getSpeedVerticalHover() {
         return speedVerticalHover;
+    }
+
+    public void setSpeedVerticalHover(double speedVerticalHover) {
+        this.speedVerticalHover = speedVerticalHover;
     }
 
     public double getSpeedVerticalHoverSlow() {
         return speedVerticalHoverSlow;
     }
 
+    public void setSpeedVerticalHoverSlow(double speedVerticalHoverSlow) {
+        this.speedVerticalHoverSlow = speedVerticalHoverSlow;
+    }
+
     public double getSpeedSideways() {
         return speedSideways;
+    }
+
+    public void setSpeedSideways(double speedSideways) {
+        this.speedSideways = speedSideways;
     }
 
     public double getSprintSpeedModifier() {
         return sprintSpeedModifier;
     }
 
+    public void setSprintSpeedModifier(double sprintSpeedModifier) {
+        this.sprintSpeedModifier = sprintSpeedModifier;
+    }
+
     public double getSprintEnergyModifier() {
         return sprintEnergyModifier;
+    }
+
+    public void setSprintEnergyModifier(double sprintEnergyModifier) {
+        this.sprintEnergyModifier = sprintEnergyModifier;
     }
 
     public boolean getHoverMode() {
         return hoverMode;
     }
 
+    public void setHoverMode(boolean hoverMode) {
+        this.hoverMode = hoverMode;
+    }
+
     public boolean getEmergencyHoverMode() {
         return emergencyHoverMode;
     }
 
+    public void setEmergencyHoverMode(boolean emergencyHoverMode) {
+        this.emergencyHoverMode = emergencyHoverMode;
+    }
+
     public boolean getChargerMode() {
         return chargerMode;
+    }
+
+    public void setChargerMode(boolean chargerMode) {
+        this.chargerMode = chargerMode;
     }
 
     public boolean isNoAdvancements() {
