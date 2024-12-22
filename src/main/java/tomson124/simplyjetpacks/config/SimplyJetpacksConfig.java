@@ -233,7 +233,6 @@ public class SimplyJetpacksConfig {
         if (configEvent.getConfig().getFileName().equals("simplyjetpacks-common.toml")) {
             // Ensure config is only reloaded for the server side
             if (FMLEnvironment.dist.isDedicatedServer() || Minecraft.getInstance().isLocalServer()) {
-                JetpackType.loadAllConfigs();
 
                 List<ServerPlayer> playerList = ServerLifecycleHooks.getCurrentServer().getPlayerList().getPlayers();
                 SimplyJetpacks.LOGGER.info("Server jetpack config updated. Syncing {} player(s) configs.", playerList.size());
